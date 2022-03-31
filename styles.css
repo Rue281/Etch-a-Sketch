@@ -1,13 +1,18 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 960px;
 }
 .flexChild {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .col {
     height: 40px;
     width: 40px;
     border: 2px solid black;
+  }
+  
+  .inked{
+      background-color: blueviolet;
   }

@@ -1,27 +1,54 @@
 let container = document.querySelector(".container");
 
-let cloumnDivs = document.querySelectorAll(".col");
+let mouseDown = false;
+container.onmousedown = () => (mouseDown = true)
+container.onmouseup = () => (mouseDown = false)
 
 createGrid();
-
-//create grids
-function createGrid(){
-    for(let i = 0; i<16; i++){
+function createGrid(size = 2){
+    for(let i = 0; i<size; i++){
         let flexChild = document.createElement("div");
         flexChild.className="flexChild";
-    
         
-        //create 16 div inside flexChild
-        for(let i = 0; i<16; i++){
-            //let button = document.createElement("button");
-            let cloumnDiv = document.createElement("div");
-            cloumnDiv.className = "col";
-    
-            
-    
-            flexChild.appendChild(cloumnDiv);
-        }
-    
+        for(let i = 0; i<size; i++){
+            let columnDiv = document.createElement("div");
+            columnDiv.className = "col";
+
+            flexChild.appendChild(columnDiv);
+
+            columnDiv.addEventListener("mouseover",function(){columnDiv.classList.add("inked")})
+            columnDiv.addEventListener("mousedown",function(){columnDiv.classList.add("inked")})
+        } 
         container.appendChild(flexChild);
     }
 }
+
+//clear grid
+let clearBtn = document.querySelector(".clear");
+clearBtn.addEventListener("click",clearGrid);
+
+function clearGrid(){
+
+    //remove all chlidren of container
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
+//update slider value
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    
+    if(slider.value === 0 || slider.value  %2 === 0){
+        clearGrid();
+        output.innerHTML = slider.value;
+        createGrid(slider.value);
+        output.innerHTML = slider.value;
+    }
+}
+
+
+

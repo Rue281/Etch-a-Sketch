@@ -10,10 +10,12 @@
 <body>
     <button class="clear">Clear Grid</button>
     <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="2" class="slider" id="myRange">
-        <p>Value: <span id="demo"></span></p>
+        <input type="range" min="0" max="100" value="2" class="slider" id="myRange">
+        <p class="value">Value: <span id="demo"></span></p>
       </div>
-    <div class="container">
+      <label class="colorPicker" for="colorWell"> <input type="color" value="#ff0000" id="colorWell">Color:</label>
+      <button class="spectrum">spectrum</button>
+      <div class="container">
     </div>
     <script src="index.js"></script>
 </body>

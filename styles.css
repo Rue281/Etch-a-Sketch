@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 960px;
+    margin: 20px;
 }
 .flexChild {
     display: flex;
@@ -15,4 +16,16 @@
   
   .inked{
       background-color: blueviolet;
+  }
+
+  .colorPicker{
+    padding: 5px;
+    border: 3px solid blue;
+    margin-bottom: 5px;
+  }
+
+  #colorWell{
+    border: 0;
+    background: transparent;
+    display: contents;
   }

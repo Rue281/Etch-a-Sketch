@@ -13,6 +13,7 @@ let mouseDown = false;
 container.onmousedown = () => (mouseDown = true)
 container.onmouseup = () => (mouseDown = false)
 
+
 createGrid();
 function createGrid(size = 2){
     for(let i = 0; i<size; i++){
@@ -95,7 +96,8 @@ slider.oninput = function() {
         clearGrid();
         valueContainer.style.display = "block";
         createGrid(slider.value);
-        output.innerHTML = slider.value;
+        //Math.pow(slider.value, slider.value)
+        output.innerHTML = slider.value * slider.value;
     }
 }
 

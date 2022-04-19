@@ -1,14 +1,40 @@
+body{
+  background: azure;
+}
+.mainContainer{
+  padding: 0 60px;
+}
+.title{
+  text-align: center;
+  font-size: 60px;
+  color: gray;
+  font-family: 'Henny Penny', cursive;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Shizuru', cursive;
+}
+.spectrum{
+  border: grey;
+  border-radius: 30px;
+  padding: 20px;
+}
+.clear{
+  padding: 20px;
+  border-radius: 30PX;
+  border: grey;
+}
 .container{
     display: flex;
     flex-direction: column;
-    width: 960px;
+    align-self: center;
+    align-items: center;
+    width: 100%;
     margin: 20px;
 }
 .flexChild {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border: 2px solid black;
+    
     width: fit-content;
   }
   .col {
@@ -18,8 +44,8 @@
     
   }
   .colorPicker{
-    padding: 5px;
-    border: 3px solid blue;
+    border-radius: 30px;
+    padding: 15px 20px;
     margin-bottom: 5px;
   }
   #colorWell{
